@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Compose  Practice Project"
+rootProject.name = "Compose Practice"
 include(":app")
  
