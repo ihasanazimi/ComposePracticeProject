@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composepracticeproject.ui.theme.ComposePracticeProjectTheme
 
@@ -15,18 +16,30 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             ComposePracticeProjectTheme {
-                Profile()
+//                Profile()
+//                Parent()
+                ImageCardSample(
+                    painter = painterResource(id = R.drawable.profile),
+                    title = "Hasan azimi",
+                    description = "iam the android developer at ebcom or mci company"
+                )
             }
         }
 
     }
 
 
-    @Preview(showBackground = true)
+    @Preview(showBackground = true, showSystemUi = true)
     @Composable
     fun GreetingPreview() {
         ComposePracticeProjectTheme {
-            Profile()
+//            Profile()
+//            Parent()
+            ImageCardSample(
+                painter = painterResource(id = R.drawable.profile),
+                title = "Hasan azimi",
+                description = "iam the android developer at ebcom or mci company"
+            )
         }
     }
 
