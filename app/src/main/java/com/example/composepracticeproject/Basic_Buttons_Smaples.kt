@@ -1,7 +1,9 @@
 package com.example.composepracticeproject
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -13,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -21,12 +24,15 @@ import androidx.compose.ui.unit.dp
 @Preview(showSystemUi = true)
 fun BasicsButtonsPreview() {
 
+
+    val localContext = LocalContext.current
     // Buttons
     Column(modifier = Modifier.padding(16.dp)) {
 
 
         // simple btn
-        Button(onClick = { /* todo */ }) {
+        Button(onClick = {
+        }) {
             Text(text = "Simple Button")
         }
 
@@ -43,7 +49,7 @@ fun BasicsButtonsPreview() {
 
         // Button with multiple text
         Button(onClick = {/* todo */ }, colors = ButtonDefaults.buttonColors(Color.Red)) {
-            Text(text = "Click ", color = Color.Black)
+            Text(text = "Click ", color = Color.Black )
             Text(text = "Here", color = Color.Yellow)
         }
 
@@ -100,5 +106,15 @@ fun BasicsButtonsPreview() {
 
     }
 
+}
 
+
+
+@Composable
+fun SampleButton(text : String ,callBack : () -> Unit) {
+    Button(onClick = {
+        callBack.invoke()
+    }) {
+        Text(text = text )
+    }
 }

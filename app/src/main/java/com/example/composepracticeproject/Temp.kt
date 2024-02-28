@@ -1,5 +1,6 @@
 package com.example.composepracticeproject
 
+import androidx.compose.animation.core.Spring
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -10,6 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.shape.CutCornerShape
@@ -39,7 +41,11 @@ private fun Greeting(name: String, modifier: Modifier = Modifier) {
     var expanded by rememberSaveable { mutableStateOf(false) }
 
     val extraPadding by animateDpAsState(
-        if (expanded) 108.dp else 0.dp
+        if (expanded) 42.dp else 4.dp,
+        animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessLow
+        ), label = ""
     )
     Surface(
         color = MaterialTheme.colorScheme.primary,
@@ -47,7 +53,7 @@ private fun Greeting(name: String, modifier: Modifier = Modifier) {
     ) {
         Row(modifier = Modifier.padding(24.dp)) {
             Column(modifier = Modifier
-                .weight(1f)
+                .weight(0.5f)
                 .padding(bottom = extraPadding)
             ) {
                 Text(text = "Hello, ")

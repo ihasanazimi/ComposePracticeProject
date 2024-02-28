@@ -1,6 +1,8 @@
 package com.example.composepracticeproject
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
@@ -10,7 +12,6 @@ import com.example.composepracticeproject.ui.theme.ComposePracticeProjectTheme
 
 class MainActivity : ComponentActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,16 +19,19 @@ class MainActivity : ComponentActivity() {
             ComposePracticeProjectTheme {
 //                Profile()
 //                Parent()
-                ImageCardSample(
-                    painter = painterResource(id = R.drawable.profile),
-                    title = "Hasan azimi",
-                    description = "iam the android developer at ebcom or mci company"
-                )
+//                ImageCardSample(
+//                    painter = painterResource(id = R.drawable.profile),
+//                    title = "Hasan azimi",
+//                    description = "iam the android developer at ebcom or mci company"
+//                )
+
+                SampleButton("sdfglkskdf") {
+                    Toast.makeText(this,"sdfjnkdsf",Toast.LENGTH_LONG).show()
+                }
             }
         }
 
     }
-
 
     @Preview(showBackground = true, showSystemUi = true)
     @Composable
@@ -35,11 +39,17 @@ class MainActivity : ComponentActivity() {
         ComposePracticeProjectTheme {
 //            Profile()
 //            Parent()
-            ImageCardSample(
-                painter = painterResource(id = R.drawable.profile),
-                title = "Hasan azimi",
-                description = "iam the android developer at ebcom or mci company"
-            )
+//            ImageCardSample(
+//                painter = painterResource(id = R.drawable.profile),
+//                title = "Hasan azimi",
+//                description = "iam the android developer at ebcom or mci company"
+//            )
+
+
+            SampleButton("sdfglkskdf") {
+                Toast.makeText(this,"sdfjnkdsf",Toast.LENGTH_LONG).show()
+            }
+
         }
     }
 

@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.tooling.preview.Preview
@@ -30,7 +31,9 @@ import androidx.compose.ui.unit.sp
 fun imageCard(painter: Painter , title : String , description : String) {
 
     Card(
-        modifier = Modifier.width(150.dp).height(200.dp),
+        modifier = Modifier
+            .width(150.dp)
+            .height(200.dp),
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation()
     ) {
@@ -89,7 +92,7 @@ fun ImageCardSample(painter : Painter , title : String, description: String){
 @Composable
 private fun PewviewImagCard() {
     val painter = painterResource(id = R.drawable.profile)
-    val title = "Hasan azimi"
-    val description = "iam the android developer at ebcom or mci company"
+    val title = stringResource(id = R.string.app_name)
+    val description = "i am android developer and this is a sample card of basic components"
     imageCard(painter = painter , title = title , description = description )
 }
